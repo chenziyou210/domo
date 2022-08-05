@@ -7,6 +7,7 @@ import 'package:blog/ui/page/complex_module/ask_page/ask_page.dart';
 import 'package:blog/ui/page/complex_module/main_page/main_page.dart';
 import 'package:blog/ui/page/complex_module/square_page/square_page.dart';
 import 'package:blog/widget/ripple_widget.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
@@ -81,11 +82,11 @@ class _ComplexPageState extends State<ComplexPage>
                       circular: 20,
                       onTap: () => Get.toNamed(Routes.searchPage),
                       child: Padding(
-                        padding: const EdgeInsets.all(5),
+                        padding:  EdgeInsets.all(3.w),
                         child: SvgPicture.asset(
                           R.assetsImagesSearch,
                           color: Colors.black87,
-                          width: 30,
+                          width: 30.w,
                         ),
                       )),
 

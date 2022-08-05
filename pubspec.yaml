@@ -34,6 +34,8 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  flutter_screenutil: ^5.5.3+2
+  get_storage: 2.0.3
 
 dev_dependencies:
   flutter_test:
@@ -48,7 +50,7 @@ dev_dependencies:
   # rxdart https://pub.flutter-io.cn/packages/rxdart
   rxdart: ^0.27.1
   #GetX状态管理框架 https://pub.flutter-io.cn/packages/get
-  get: 4.3.7
+  get: ^4.6.5
   #toast https://pub.flutter-io.cn/packages/fluttertoast
   fluttertoast: ^8.0.8
   # 网络请求库 https://github.com/flutterchina/dio
@@ -79,6 +81,9 @@ dev_dependencies:
   image_gallery_saver: ^1.7.1
   #权限申请框架 https://pub.flutter-io.cn/packages/permission_handler
   permission_handler: ^8.1.6
+  # 帮助类
+  quiver: ^3.1.0
+  event_bus: ^2.0.0 #事件总线
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

@@ -51,7 +51,7 @@ class HomeTabOptionsState extends State<HomePage>
   @override
   void initState() {
     tabController = TabController(length: 3, vsync: this);
-    WidgetsBinding.instance?.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
 
     ///监听TabBar切换事件
     tabController?.addListener(() {

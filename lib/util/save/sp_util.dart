@@ -6,6 +6,7 @@ import 'package:blog/model/request_register.dart';
 import 'package:blog/util/save/sp_key.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// @class : SpUtil
@@ -34,25 +35,27 @@ class SpUtil {
   ///存储用户信息
   ///[userInfo] 用户信息
   static putUserInfo(UserEntity userInfo) {
-    Get.find<SharedPreferences>()
-        .setString(SPKey.keyUserInfo, jsonEncode(userInfo.toJson()));
+    // Get.find<SharedPreferences>()
+    //     .setString(SPKey.keyUserInfo, jsonEncode(userInfo.toJson()));
+    GetStorage().write(SPKey.keyUserInfo, jsonEncode(userInfo.toJson()));
   }
 
   ///获取用户信息
   ///[UserEntity] 用户信息
   static UserEntity? getUserInfo() {
-    SharedPreferences sp = Get.find<SharedPreferences>();
-    try {
-      var json = sp.getString(SPKey.keyUserInfo);
-      if (json == null) {
-        return null;
-      } else {
-        return UserEntity.fromJson(jsonDecode(json));
-      }
-    } catch (e) {
-      debugPrint(e.toString());
-      return null;
-    }
+   return GetStorage().read(SPKey.keyUserInfo,);
+    // SharedPreferences sp = Get.find<SharedPreferences>();
+    // try {
+    //   var json = sp.getString(SPKey.keyUserInfo);
+    //   if (json == null) {
+    //     return null;
+    //   } else {
+    //     return UserEntity.fromJson(jsonDecode(json));
+    //   }
+    // } catch (e) {
+    //   debugPrint(e.toString());
+    //   return null;
+    // }
   }
 
 

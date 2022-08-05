@@ -1,5 +1,6 @@
 import 'package:blog/http/request_repository.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// @class : Injection
@@ -10,7 +11,8 @@ class Injection{
 
   static Future<void> init() async {
     // shared_preferences
-    await Get.putAsync(() => SharedPreferences.getInstance());
+    // await Get.putAsync(() => SharedPreferences.getInstance());
+    await GetStorage.init();
     Get.lazyPut(() =>RequestRepository());
   }
 }
